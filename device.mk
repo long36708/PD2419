@@ -1,5 +1,9 @@
 
 
+# Dynamic partitions: AOSP 14 把它声明为产品侧只读变量, 只能在这里设置,
+# 写进 BoardConfig.mk 会在 lunch 阶段报 cannot assign to readonly variable
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
 # API
 PRODUCT_SHIPPING_API_LEVEL := 31
 PRODUCT_TARGET_VNDK_VERSION := 31

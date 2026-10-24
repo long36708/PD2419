@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+LOCAL_PATH := device/VIVO/PD2415
+
 # Configure base.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
@@ -28,6 +30,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Configure twrp config common.mk
 $(call inherit-product, vendor/twrp/config/common.mk)
+
+# Device-specific packages and product vars (A/B, bootctrl, keymint...)
+$(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Release name
 PRODUCT_RELEASE_NAME := PD2415
