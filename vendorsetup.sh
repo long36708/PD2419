@@ -27,7 +27,8 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 
     # Build
     export LC_ALL="C"
-    export FOX_VERSION=$(date +%y.%m.%d)
+    # FOX_VERSION 在 fox_14.1 已废除 (orangefox.mk 会对它直接报错),
+    # 版本号由 FOX_INTERNAL_RELEASE 控制; 维护者补丁版本用 FOX_MAINTAINER_PATCH_VERSION
     export ALLOW_MISSING_DEPENDENCIES=true
     export TARGET_DEVICE_ALT="PD2415"
     export FOX_VIRTUAL_AB_DEVICE=1
